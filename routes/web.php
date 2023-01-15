@@ -10,4 +10,5 @@ Route::get('/', function () {
 
 //autocomplete-search
 Route::get('/autocomplete-search', [AutocompleteSearchController::class, 'index'])->name('autocompleteSearch.index');
+Route::get('/autocomplete-search-query', [AutocompleteSearchController::class, 'autocompleteSearch'])->name('autocompleteSearch');
 
