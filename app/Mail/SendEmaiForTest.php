@@ -25,6 +25,7 @@ class SendEmaiForTest extends Mailable
         $messageData = $this->messageData;
         return $this->subject('This is Testing Mail')
             ->view('SendEmail.emailsTemplate', compact('messageData'));
+
     }
 
 }

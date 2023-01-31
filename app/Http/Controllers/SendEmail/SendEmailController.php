@@ -18,13 +18,15 @@ class SendEmailController extends Controller
 
     public function sendLetter(MeilSendValidationRequest $request)
     {
-        $obj = new SendEmailServices();
 
         $title = $request->input('title');
         $info = $request->input('info');
-//        $obj->sendEmail($title, $info);
-//        return redirect('/sendmail');
-        $this->dispatch(new SendEmailJob());
+        $this->dispatch(new SendEmailJob($title, $info));
+        return redirect('/sendmail')->with('success', 'Email send success');;
+
+
+
+
 
 
     }

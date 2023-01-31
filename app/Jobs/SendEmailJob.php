@@ -2,25 +2,32 @@
 
 namespace App\Jobs;
 
+use App\Mail\SendEmaiForTest;
+use App\Services\SendEmail\SendEmailServices;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Mail;
 
 class SendEmailJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    protected $title;
+    protected $info;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($title, $info)
     {
-        //
+        $this->title = $title;
+        $this->info = $info;
     }
 
     /**
@@ -30,6 +37,7 @@ class SendEmailJob implements ShouldQueue
      */
     public function handle()
     {
-        $x = 3;
+        $obj = new SendEmailServices();
+        $obj->sendEmail($this->title, $this->info);
     }
 }

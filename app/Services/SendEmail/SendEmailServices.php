@@ -16,9 +16,8 @@ class SendEmailServices
 
      try {
          Mail::to('andrejfilkinq@gmail.com')->send(new SendEmaiForTest($messageData));
-         return redirect('/sendmail')->with('success', 'Email send success');
      } catch (Exception $e) {
-         return redirect('/sendmail');
+         echo 'error';
      }
  }
 
