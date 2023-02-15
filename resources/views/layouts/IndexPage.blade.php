@@ -37,7 +37,7 @@
             max-width: 600px;
         }
     </style>
-
+    @stack('custom-scripts')
 </head>
 <body>
 

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutocompleteSearch\AutocompleteSearchController;
 use App\Http\Controllers\SendEmail\SendEmailController;
+use App\Http\Controllers\JavaScriptTest\JavaScriptTestController;
 
 
 Route::get('/', function () {
@@ -16,3 +17,6 @@ Route::get('/autocomplete-search-query', [AutocompleteSearchController::class, '
 //send email with using Queue
 Route::get('/sendmail', [SendEmailController::class, 'index'])->name('sendmail.index');
 Route::post('/sendLetter', [SendEmailController::class, 'sendLetter'])->name('sendLetter');
+
+//Test JavaScript
+Route::get('/JavaScriptTest', [JavaScriptTestController::class, 'index'])->name('javascripttest.index');
