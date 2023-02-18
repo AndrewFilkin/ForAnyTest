@@ -10,5 +10,8 @@
     <div class="list-group">
         <a href="{{route('javascripttest.index')}}" class="list-group-item list-group-item-action list-group-item-primary">JavaScript</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('testdbrelationcontroller.index')}}" class="list-group-item list-group-item-action list-group-item-primary">TestDbRelation</a>
+    </div>
 
 @stop

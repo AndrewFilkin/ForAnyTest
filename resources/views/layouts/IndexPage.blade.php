@@ -38,6 +38,7 @@
         }
     </style>
     @stack('custom-scripts')
+    @stack('custom-style')
 </head>
 <body>
 

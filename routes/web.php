@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutocompleteSearch\AutocompleteSearchController;
 use App\Http\Controllers\SendEmail\SendEmailController;
 use App\Http\Controllers\JavaScriptTest\JavaScriptTestController;
+use App\Http\Controllers\TestDb\TestDbRelationController;
 
 
 Route::get('/', function () {
@@ -20,3 +21,6 @@ Route::post('/sendLetter', [SendEmailController::class, 'sendLetter'])->name('se
 
 //Test JavaScript
 Route::get('/JavaScriptTest', [JavaScriptTestController::class, 'index'])->name('javascripttest.index');
+
+//Test Db relation
+Route::get('/test-db-relation', [TestDbRelationController::class, 'index'])->name('testdbrelationcontroller.index');
