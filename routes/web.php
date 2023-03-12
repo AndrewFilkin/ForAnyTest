@@ -5,6 +5,7 @@ use App\Http\Controllers\AutocompleteSearch\AutocompleteSearchController;
 use App\Http\Controllers\SendEmail\SendEmailController;
 use App\Http\Controllers\JavaScriptTest\JavaScriptTestController;
 use App\Http\Controllers\TestDb\TestDbRelationController;
+use App\Http\Controllers\TestQueue\TestQueue;
 
 
 Route::get('/', function () {
@@ -24,3 +25,9 @@ Route::get('/JavaScriptTest', [JavaScriptTestController::class, 'index'])->name(
 
 //Test Db relation
 Route::get('/test-db-relation', [TestDbRelationController::class, 'index'])->name('testdbrelationcontroller.index');
+
+//Test Queue
+Route::get('/test-queue', [TestQueue::class, 'index'])->name('test-queue.index');
+Route::post('/send-message', [TestQueue::class, 'sendMessage'])->name('send-message');
+
+

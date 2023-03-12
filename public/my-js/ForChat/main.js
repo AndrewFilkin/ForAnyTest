@@ -14,8 +14,26 @@ function addRow() {
                                     </div>
                                 </div>`
     )
+    createMessageOnDb(searchTxt.value);
 }
 
 function removeRow(input) {
     input.parentNode.remove()
+}
+
+async function createMessageOnDb(textMessage) {
+
+    let messages = {
+        message: textMessage
+    };
+
+    let response = await fetch('http://localhost/api/createDbMessage', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(messages)
+    });
+
+    let result = await response.json();
 }

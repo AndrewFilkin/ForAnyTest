@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Participants extends Model
+class testQueue extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'room_id'
+        'message',
     ];
 }

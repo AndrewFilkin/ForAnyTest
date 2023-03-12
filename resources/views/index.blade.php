@@ -13,5 +13,9 @@
     <div class="list-group">
         <a href="{{route('testdbrelationcontroller.index')}}" class="list-group-item list-group-item-action list-group-item-primary">TestDbRelation</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('test-queue.index')}}" class="list-group-item list-group-item-action list-group-item-primary">TestQueue</a>
+    </div>
+
 
 @stop
