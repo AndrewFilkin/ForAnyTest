@@ -15,7 +15,7 @@ class TestQueue extends Controller
 
     public function sendMessage(Request $request)
     {
-        TestQueueJob::dispatch($request->message);
+        TestQueueJob::dispatch($request->message)->delay(now()->addMinutes(1));
     }
 
 }
