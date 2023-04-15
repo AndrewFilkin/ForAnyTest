@@ -9,6 +9,7 @@ use App\Http\Controllers\TestQueue\TestQueue;
 use App\Http\Controllers\TestRedis\TestRedicController;
 use App\Http\Controllers\TestDownloadLibWithComposer\TestDownloadLibMathExecutorController;
 use App\Http\Controllers\GenerateShortLink\GenerateShortLinkController;
+use App\Http\Controllers\Parsing\ParsingDataWithSiteController;
 
 
 Route::get('/', function () {
@@ -47,3 +48,6 @@ Route::put('/upgrade-short-link/{code}', [GenerateShortLinkController::class, 'u
 Route::get('/delete-short-link/{code}', [GenerateShortLinkController::class, 'deleteShortLink'])->name('delete-short-link.delete');
 Route::get('/redirect-short-link/{code}', [GenerateShortLinkController::class, 'redirectShortLink'])->name('redirect-short-link.redirect');
 
+//Parsing data with site
+Route::get('/parsing-data-with-site', [ParsingDataWithSiteController::class, 'index'])->name('parsing.index');
+Route::get('/get-parsing-data-with-site', [ParsingDataWithSiteController::class, 'getParsingData'])->name('get.parsing.data');

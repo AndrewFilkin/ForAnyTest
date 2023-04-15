@@ -25,6 +25,9 @@
     <div class="list-group">
         <a href="{{route('generate-short-link.index')}}" class="list-group-item list-group-item-action list-group-item-primary">GenerateShortLink</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('parsing.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Parsing data with site</a>
+    </div>
 
 
 @stop
