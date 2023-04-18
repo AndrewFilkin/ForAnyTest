@@ -9,6 +9,6 @@ class GetDateFromApiController extends Controller
 {
     public function getParsingData()
     {
-        dd('test');
+        dd('Pull requests test');
     }
 }
