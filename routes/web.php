@@ -10,6 +10,7 @@ use App\Http\Controllers\TestRedis\TestRedicController;
 use App\Http\Controllers\TestDownloadLibWithComposer\TestDownloadLibMathExecutorController;
 use App\Http\Controllers\GenerateShortLink\GenerateShortLinkController;
 use App\Http\Controllers\Parsing\ParsingDataWithSiteController;
+use App\Http\Controllers\getDateFromApi\GetDateFromApiController;
 
 
 Route::get('/', function () {
@@ -51,3 +52,5 @@ Route::get('/redirect-short-link/{code}', [GenerateShortLinkController::class, '
 //Parsing data with site
 Route::get('/parsing-data-with-site', [ParsingDataWithSiteController::class, 'index'])->name('parsing.index');
 Route::get('/get-parsing-data-with-site', [ParsingDataWithSiteController::class, 'getParsingData'])->name('get.parsing.data');
+//getDateFromApi
+Route::get('/get-data-from-api', [GetDateFromApiController::class, 'getParsingData'])->name('get.data.from.api.index');
