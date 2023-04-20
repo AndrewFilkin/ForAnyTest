@@ -29,7 +29,10 @@
         <a href="{{route('parsing.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Parsing data with site</a>
     </div>
     <div class="list-group">
-        <a href="{{route('get.data.from.api.index')}}" class="list-group-item list-group-item-action list-group-item-primary">getDateFromApi</a>
+        <a href="{{route('get.data.from.api.index')}}" class="list-group-item list-group-item-action list-group-item-primary">getDateFromApi (in working)</a>
+    </div>
+    <div class="list-group">
+        <a href="{{route('test.iterator.index')}}" class="list-group-item list-group-item-action list-group-item-primary">TestIterator (in working)</a>
     </div>
 
 

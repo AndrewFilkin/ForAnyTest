@@ -11,6 +11,7 @@ use App\Http\Controllers\TestDownloadLibWithComposer\TestDownloadLibMathExecutor
 use App\Http\Controllers\GenerateShortLink\GenerateShortLinkController;
 use App\Http\Controllers\Parsing\ParsingDataWithSiteController;
 use App\Http\Controllers\getDateFromApi\GetDateFromApiController;
+use App\Http\Controllers\TestIterator\TestIteratorController;
 
 
 Route::get('/', function () {
@@ -54,3 +55,5 @@ Route::get('/parsing-data-with-site', [ParsingDataWithSiteController::class, 'in
 Route::get('/get-parsing-data-with-site', [ParsingDataWithSiteController::class, 'getParsingData'])->name('get.parsing.data');
 //getDateFromApi
 Route::get('/get-data-from-api', [GetDateFromApiController::class, 'getParsingData'])->name('get.data.from.api.index');
+// Test iterator
+Route::get('/test-iterator', [TestIteratorController::class, 'index'])->name('test.iterator.index');
