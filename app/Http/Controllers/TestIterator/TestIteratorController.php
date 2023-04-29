@@ -5,19 +5,24 @@ namespace App\Http\Controllers\TestIterator;
 use App\Http\Controllers\Controller;
 use ArrayIterator;
 use Illuminate\Http\Request;
+use App\Models\TestiteratorModel;
 
 class TestIteratorController extends Controller
 {
+
+
     public function index()
     {
-        $array = array('apple', 'banana', 'cherry');
-
-        $iterator = new ArrayIterator($array);
-
-        foreach ($iterator as $key => $value) {
-            $array[$key] = 'test';
-            echo $array[$key] . '<br>';
+        $mass = [];
+        $array = TestiteratorModel::orderBy('numbers')->get();
+        foreach ($array as $key=>$item) {
+            $mass[$key] = $item->numbers;
         }
-        echo $array[1];
+
+        $iterator = new ArrayIterator($mass);
+        foreach ($iterator as $key => $value) {
+            echo $value . '<br>';
+        }
+
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.IndexPage')
 @section('body')
-    <form class="col-lg-6 offset-lg-3" method="POST" action="{{route('save-short-link.create')}}">
-        @csrf
+    <form class="col-lg-6 offset-lg-3" method="GET" action="{{route('get.parsing.data')}}">
+{{--        @csrf--}}
         <div class="row justify-content-center">
             <div class="form-group">
                 <label for="name">Site</label>

@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Message>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class MessageFactory extends Factory
+class TestiteratorModelFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,8 @@ class MessageFactory extends Factory
     public function definition()
     {
         return [
-            'message' => fake()->text(60),
+            'numbers' => fake()->numberBetween(1, 50),
+            'words' => fake()->word(),
         ];
     }
 }
