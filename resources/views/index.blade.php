@@ -34,6 +34,9 @@
     <div class="list-group">
         <a href="{{route('test.iterator.index')}}" class="list-group-item list-group-item-action list-group-item-primary">TestIterator</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('test.cache.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Test Cache</a>
+    </div>
 
 
 @stop

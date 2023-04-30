@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "nxp/math-executor": "^2.3",
+        "predis/predis": "^2.1",
         "sunra/php-simple-html-dom-parser": "1.5.2"
     },
     "require-dev": {

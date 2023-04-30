@@ -12,6 +12,7 @@ use App\Http\Controllers\GenerateShortLink\GenerateShortLinkController;
 use App\Http\Controllers\Parsing\ParsingDataWithSiteController;
 use App\Http\Controllers\getDateFromApi\GetDateFromApiController;
 use App\Http\Controllers\TestIterator\TestIteratorController;
+use App\Http\Controllers\Cache\TestCacheController;
 
 
 Route::get('/', function () {
@@ -57,3 +58,5 @@ Route::get('/get-parsing-data-with-site', [ParsingDataWithSiteController::class,
 Route::get('/get-data-from-api', [GetDateFromApiController::class, 'getParsingData'])->name('get.data.from.api.index');
 // Test iterator
 Route::get('/test-iterator', [TestIteratorController::class, 'index'])->name('test.iterator.index');
+//Test Cache
+Route::get('/test-cache', [TestCacheController::class, 'index'])->name('test.cache.index');
