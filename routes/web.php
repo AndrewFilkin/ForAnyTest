@@ -13,6 +13,7 @@ use App\Http\Controllers\Parsing\ParsingDataWithSiteController;
 use App\Http\Controllers\getDateFromApi\GetDateFromApiController;
 use App\Http\Controllers\TestIterator\TestIteratorController;
 use App\Http\Controllers\Cache\TestCacheController;
+use App\Http\Controllers\Session\TestSessionController;
 
 
 Route::get('/', function () {
@@ -60,3 +61,5 @@ Route::get('/get-data-from-api', [GetDateFromApiController::class, 'getParsingDa
 Route::get('/test-iterator', [TestIteratorController::class, 'index'])->name('test.iterator.index');
 //Test Cache
 Route::get('/test-cache', [TestCacheController::class, 'index'])->name('test.cache.index');
+//Test Session
+Route::get('/test-session', [TestSessionController::class, 'index'])->name('test-session.index');
