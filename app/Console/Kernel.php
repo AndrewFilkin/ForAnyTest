@@ -5,6 +5,8 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\RequestAfterTime\RequestAfterTimeController;
 
 class Kernel extends ConsoleKernel
 {
@@ -14,11 +16,14 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+
+//sail artisan schedule:work
     protected function schedule(Schedule $schedule)
     {
-        $schedule->call(function () {
-            DB::table('rooms')->delete();
-        })->everyTwoMinutes();
+        $obj = new RequestAfterTimeController();
+        $schedule->call(function () use ($obj) {
+            $obj->index();
+        })->everyMinute();
     }
 
     /**

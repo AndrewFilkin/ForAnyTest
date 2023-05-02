@@ -40,6 +40,9 @@
     <div class="list-group">
         <a href="{{route('test-session.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Test Session</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('request-after-time.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Request after a certain time</a>
+    </div>
 
 
 @stop
