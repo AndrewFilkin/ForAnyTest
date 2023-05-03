@@ -15,6 +15,7 @@ use App\Http\Controllers\TestIterator\TestIteratorController;
 use App\Http\Controllers\Cache\TestCacheController;
 use App\Http\Controllers\Session\TestSessionController;
 use App\Http\Controllers\RequestAfterTime\RequestAfterTimeController;
+use App\Http\Controllers\Other\OtherTestController;
 
 
 Route::get('/', function () {
@@ -66,3 +67,5 @@ Route::get('/test-cache', [TestCacheController::class, 'index'])->name('test.cac
 Route::get('/test-session', [TestSessionController::class, 'index'])->name('test-session.index');
 //Request after a certain time
 Route::get('/request-after-time', [RequestAfterTimeController::class, 'index'])->name('request-after-time.index');
+//Other test
+Route::get('/other-test', [OtherTestController::class, 'index'])->name('other-test.index');

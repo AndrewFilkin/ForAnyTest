@@ -43,6 +43,9 @@
     <div class="list-group">
         <a href="{{route('request-after-time.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Request after a certain time</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('other-test.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Other Test</a>
+    </div>
 
 
 @stop
