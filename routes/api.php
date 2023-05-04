@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestDb\ApiCRUD\ApiCrudController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +15,10 @@ use App\Http\Controllers\TestDb\ApiCRUD\ApiCrudController;
 |
 */
 Route::post('/createDbMessage', [ApiCrudController::class, 'createMessage'])->name('create.message');
+
+// Регистрация
+Route::post('register', [AuthController::class, 'register'])->name('auth.register');
+
+// Аутентификация
+Route::post('login', [AuthController::class, 'login'])->name('auth.login');
+
