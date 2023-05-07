@@ -46,6 +46,9 @@
     <div class="list-group">
         <a href="{{route('other-test.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Other Test</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('post.api.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Test Post Api</a>
+    </div>
 
 
 @stop
