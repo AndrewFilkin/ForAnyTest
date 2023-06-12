@@ -17,6 +17,8 @@ use App\Http\Controllers\Session\TestSessionController;
 use App\Http\Controllers\RequestAfterTime\RequestAfterTimeController;
 use App\Http\Controllers\Other\OtherTestController;
 use App\Http\Controllers\PostApi\PostApiController;
+use App\Http\Controllers\Like\LikeController;
+use App\Http\Controllers\Like\PostController;
 
 
 Route::get('/', function () {
@@ -70,5 +72,8 @@ Route::get('/test-session', [TestSessionController::class, 'index'])->name('test
 Route::get('/request-after-time', [RequestAfterTimeController::class, 'index'])->name('request-after-time.index');
 //Other test
 Route::get('/other-test', [OtherTestController::class, 'index'])->name('other-test.index');
-//Test Show PostApi Json
-Route::get('/api/post', [PostApiController::class, 'index'])->name('post.api.index');
+//counter like and post
+//Route::get('/post-index', [LikeController::class, 'index'])->name('like-index.index');
+
+Route::get('/like-show-post', [PostController::class, 'show'])->name('like.show.post');
+
