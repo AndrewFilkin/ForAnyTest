@@ -13,6 +13,6 @@ Route::post('register', [AuthController::class, 'register'])->name('auth.registe
 // Аутентификация
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
 //Like counter
-Route::get('like-counter', [LikeCounterController::class, 'counter'])->name('like.counter');
+Route::get('like-counter/{id}', [LikeCounterController::class, 'counter'])->name('like.counter');
 Route::get('like-delete/{id}', [LikeCounterController::class, 'deleteLike'])->name('delete.counter');
 
