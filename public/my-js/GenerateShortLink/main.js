@@ -16,7 +16,7 @@ $(document).ready(function () {
         for (var i = 0; i < 10; i++) {
             output += symbols.charAt(Math.floor(Math.random() * symbols.length));
         }
-        $('#output').val(output);
+        $('#short_code').val(output);
         console.log(newStr+output)
 
     });

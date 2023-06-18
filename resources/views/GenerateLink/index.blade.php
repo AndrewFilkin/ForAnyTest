@@ -1,13 +1,16 @@
 @extends('layouts.IndexPage')
 @push('custom-scripts')
     <script type="module" src="{{ URL::asset('my-js/jQuery/jquery-3.6.3.min.js')}}"></script>
-    <script type="module" src="{{ URL::asset('my-js/jQuery/main.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/jQuery/jquery.validate.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/main.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/main.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/validation.js')}}"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/styleForLinkCreator/css.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 @endpush
 
 @section('body')
-    <form class="col-lg-6 offset-lg-3" method="POST" action="{{route('save-short-link.create')}}">
+    <form class="col-lg-6 offset-lg-3" method="POST" action="{{route('save-short-link.create')}}" name="shortLinkForm">
         @csrf
         <div class="row justify-content-center">
             <div class="form-group">
@@ -18,7 +21,7 @@
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" id="generate" type="button">Generate Code</button>
                 </div>
-                <input type="text" id="output" name="short_code" class="form-control" placeholder="" aria-label=""
+                <input type="text" id="short_code" name="short_code" class="form-control" placeholder="" aria-label=""
                        aria-describedby="basic-addon1">
             </div>
 
@@ -371,7 +374,8 @@
 							</span>
                                 </td>
                                 <td>{{$item->main_link}}</td>
-                                <td><a href="{{url('/redirect-short-link/'.$item->code)}}" target="_blank">{{$item->short_code_link}}</td>
+                                <td><a href="{{url('/redirect-short-link/'.$item->code)}}"
+                                       target="_blank">{{$item->short_code_link}}</td>
                                 <td>{{$item->description}}</td>
                                 <td>
                                     <a href="{{"update-short-link/".$item->code}}" class="edit"><i
