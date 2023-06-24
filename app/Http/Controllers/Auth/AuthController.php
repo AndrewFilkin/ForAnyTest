@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Cookie;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -32,18 +34,35 @@ class AuthController extends Controller
 
         $token = $user->createToken(Str::random(60))->accessToken;
 
+        $cookie = cookie('loginData', $token, 30);
+
         $user->token = $token['name'];
         $user->save();
 
-        return response(['token' => $token]);
+        return response(['token' => $token])->cookie($cookie);
     }
 
     public function login(Request $request)
     {
+
+        $userToken = $request->cookie('loginData');
+
+        $tokenData = json_decode($userToken);
+
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255',
             'password' => 'required|string|min:6',
         ]);
+
+        $results = DB::table('users')
+            ->where('token', $tokenData->name)
+            ->get();
+
+
+        if (!$results) {
+            return response("Token time out", 422);
+        }
+
 
         if ($validator->fails()) {
             return response(['errors' => $validator->errors()->all()], 422);
@@ -53,9 +72,7 @@ class AuthController extends Controller
             return response(['errors' => ['Invalid credentials']], 422);
         }
 
-        $user = $request->user();
-        $token = $user->createToken('Token Name')->accessToken;
 
-        return response(['token' => $token]);
+        return response('login');
     }
 }
