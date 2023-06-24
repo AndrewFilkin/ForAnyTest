@@ -49,6 +49,9 @@
     <div class="list-group">
         <a href="{{route('like.show.post')}}" class="list-group-item list-group-item-action list-group-item-primary">Like counter</a>
     </div>
+    <div class="list-group">
+        <a href="{{route('cookie.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Cookie Test</a>
+    </div>
 
 
 @stop

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -22,13 +23,17 @@ class AuthController extends Controller
             return response(['errors' => $validator->errors()->all()], 422);
         }
 
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
         ]);
 
-        $token = $user->createToken('Token Name')->accessToken;
+        $token = $user->createToken(Str::random(60))->accessToken;
+
+        $user->token = $token['name'];
+        $user->save();
 
         return response(['token' => $token]);
     }

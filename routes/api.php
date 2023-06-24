@@ -9,7 +9,6 @@ Route::post('/createDbMessage', [ApiCrudController::class, 'createMessage'])->na
 
 // Регистрация
 Route::post('register', [AuthController::class, 'register'])->name('auth.register');
-
 // Аутентификация
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
 //Like counter

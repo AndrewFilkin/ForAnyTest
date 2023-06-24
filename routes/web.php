@@ -19,6 +19,7 @@ use App\Http\Controllers\Other\OtherTestController;
 use App\Http\Controllers\PostApi\PostApiController;
 use App\Http\Controllers\Like\LikeController;
 use App\Http\Controllers\Like\PostController;
+use App\Http\Controllers\Cookie\CookieController;
 
 
 Route::get('/', function () {
@@ -74,6 +75,9 @@ Route::get('/request-after-time', [RequestAfterTimeController::class, 'index'])-
 Route::get('/other-test', [OtherTestController::class, 'index'])->name('other-test.index');
 //counter like and post
 //Route::get('/post-index', [LikeController::class, 'index'])->name('like-index.index');
-
 Route::get('/like-show-post', [PostController::class, 'show'])->name('like.show.post');
+//Cookie test
+Route::get('/cookie-test', [CookieController::class, 'index'])->name('cookie.index');
+Route::get('/cookie-set', [CookieController::class, 'setCookies'])->name('cookie.set');
+Route::get('/cookie-get', [CookieController::class, 'getCookies'])->name('cookie.get');
 
