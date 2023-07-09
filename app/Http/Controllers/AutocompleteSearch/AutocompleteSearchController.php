@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\AutocompleteSearch;
 
+use App\Contracts\AutocompleteSearchContract;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\AutocompleteSearch\AutocompleteSearch;
@@ -17,11 +18,9 @@ class AutocompleteSearchController extends Controller
         return view('AutocompleteSearch.index');
     }
 
-    public function autocompleteSearch(Request $request)
+    public function autocompleteSearch(Request $request, AutocompleteSearchContract $action)
     {
-        $autocompleteSearch = app('AutocompleteSearchServicesProvider');
-
-        $filterResult = $autocompleteSearch->getAutocompleteSearchQuery($request);
+        $filterResult = $action->getAutocompleteSearchQuery($request);
         return response()->json($filterResult);
     }
 

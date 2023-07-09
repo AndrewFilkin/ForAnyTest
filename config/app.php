@@ -198,7 +198,7 @@ return [
         /*
          * My Service Providers...
          */
-        App\Providers\AutocompleteSearchServicesProvider::class,
+        App\Providers\ActionServiceProvider::class,
 
     ],
 

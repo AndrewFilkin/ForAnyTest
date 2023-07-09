@@ -1,13 +1,14 @@
 <?php
 
 
-namespace App\Services\AutocompleteSearch;
+namespace App\Actions;
 
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Contracts\AutocompleteSearchContract;
 
-class AutocompleteSearch
+class AutocompleteSearchAction implements AutocompleteSearchContract
 {
     public function getAutocompleteSearchQuery(Request $request)
     {
