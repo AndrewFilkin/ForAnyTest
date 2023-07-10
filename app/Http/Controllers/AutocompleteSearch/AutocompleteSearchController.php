@@ -18,6 +18,11 @@ class AutocompleteSearchController extends Controller
         return view('AutocompleteSearch.index');
     }
 
+    /**
+     * use class Action AutocompleteSearchAction
+     * @see \App\Actions\AutocompleteSearchAction
+     */
+
     public function autocompleteSearch(Request $request, AutocompleteSearchContract $action)
     {
         $filterResult = $action->getAutocompleteSearchQuery($request);

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\GenerateShortLink;
 
+use App\Contracts\GenerateShortLinkContract;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\CreateShortLink\GenerateShortLink;
 use App\Models\ShortLink;
 
 
@@ -16,12 +16,11 @@ class GenerateShortLinkController extends Controller
         return view('GenerateLink.index', ['items' => $shortLink]);
     }
 
-    public function createAndSaveShortLink(Request $request)
+    public function createAndSaveShortLink(Request $request, GenerateShortLinkContract $service)
     {
 
-        $obj = new GenerateShortLink();
-        $shortLink = $obj->makeShortLink($request->input('main_link'), $request->input('short_code'));
-        $obj->saveLinksToDatabase($request->input('main_link'), $request->input('short_code'), $request->input('description'));
+        $shortLink = $service->makeShortLink($request->input('main_link'), $request->input('short_code'));
+        $service->saveLinksToDatabase($request->input('main_link'), $request->input('short_code'), $request->input('description'));
         return redirect('/generate-short-link');
 
     }
@@ -32,24 +31,20 @@ class GenerateShortLinkController extends Controller
         return view('GenerateLink.editLink', ['items' => $page]);
     }
 
-    public function updateShortLink(Request $request, $id)
+    public function updateShortLink(Request $request, $id, GenerateShortLinkContract $service)
     {
-        $obj = new GenerateShortLink();
-        $shortLink = $obj->makeShortLink($request->input('main_link'), $request->input('short_code'));
-        $obj = new GenerateShortLink();
-        $obj->update($request, $id, $shortLink);
+        $shortLink = $service->makeShortLink($request->input('main_link'), $request->input('short_code'));
+        $service->update($request, $id, $shortLink);
         return redirect('/generate-short-link');
     }
-    public function deleteShortLink($code)
+    public function deleteShortLink($code, GenerateShortLinkContract $service)
     {
-        $obj = new GenerateShortLink();
-        $obj->delete($code);
+        $service->delete($code);
         return redirect('/generate-short-link');
     }
 
-    public function redirectShortLink ($code) {
-        $obj = new GenerateShortLink();
-        $mainLink = $obj->redirect($code);
+    public function redirectShortLink ($code, GenerateShortLinkContract $service) {
+        $mainLink = $service->redirect($code);
         $link = $mainLink[0]->main_link;
         return redirect($link);
     }

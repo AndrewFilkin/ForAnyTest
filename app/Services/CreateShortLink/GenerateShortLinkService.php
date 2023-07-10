@@ -4,8 +4,9 @@ namespace App\Services\CreateShortLink;
 
 use App\Models\ShortLink;
 use Illuminate\Http\Request;
+use App\Contracts\GenerateShortLinkContract;
 
-class GenerateShortLink
+class GenerateShortLinkService implements GenerateShortLinkContract
 {
 
     protected $shortLink;

@@ -199,6 +199,7 @@ return [
          * My Service Providers...
          */
         App\Providers\ActionServiceProvider::class,
+        App\Providers\ServiceServiceProvider::class,
 
     ],
 

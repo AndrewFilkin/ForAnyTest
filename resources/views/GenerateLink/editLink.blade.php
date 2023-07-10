@@ -1,7 +1,10 @@
 @extends('layouts.IndexPage')
 @push('custom-scripts')
     <script type="module" src="{{ URL::asset('my-js/jQuery/jquery-3.6.3.min.js')}}"></script>
-    <script type="module" src="{{ URL::asset('my-js/jQuery/main.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/jQuery/jquery.validate.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/main.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/main.js')}}"></script>
+    <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/validation.js')}}"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/styleForLinkCreator/css.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 @endpush
@@ -19,10 +22,9 @@
                 <div class="input-group-prepend">
                     <button class="btn btn-outline-secondary" id="generate" type="button">Generate Code</button>
                 </div>
-                <input type="text" id="output" name="short_code" class="form-control" placeholder="" aria-label=""
+                <input type="text" id="short_code" name="short_code" class="form-control" placeholder="" aria-label=""
                        aria-describedby="basic-addon1" value="{{$items->code}}">
             </div>
-
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Description</label>
                 <textarea class="form-control" name="description" id="description" rows="3">{{$items->description}}</textarea>
