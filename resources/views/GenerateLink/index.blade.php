@@ -3,7 +3,6 @@
     <script type="module" src="{{ URL::asset('my-js/jQuery/jquery-3.6.3.min.js')}}"></script>
     <script type="module" src="{{ URL::asset('my-js/jQuery/jquery.validate.js')}}"></script>
     <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/main.js')}}"></script>
-    <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/main.js')}}"></script>
     <script type="module" src="{{ URL::asset('my-js/GenerateShortLink/validation.js')}}"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/styleForLinkCreator/css.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

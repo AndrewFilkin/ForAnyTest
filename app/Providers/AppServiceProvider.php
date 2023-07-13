@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Actions\TestAction;
 use App\Contracts\TestContract;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
     }
 }

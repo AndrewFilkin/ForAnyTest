@@ -20,7 +20,7 @@ use App\Http\Controllers\PostApi\PostApiController;
 use App\Http\Controllers\Like\LikeController;
 use App\Http\Controllers\Like\PostController;
 use App\Http\Controllers\Cookie\CookieController;
-
+use App\Http\Controllers\Localization\TestLocalizationController;
 
 Route::get('/', function () {
     return view('index');
@@ -80,4 +80,9 @@ Route::get('/like-show-post', [PostController::class, 'show'])->name('like.show.
 Route::get('/cookie-test', [CookieController::class, 'index'])->name('cookie.index');
 Route::get('/cookie-set', [CookieController::class, 'setCookies'])->name('cookie.set');
 Route::get('/cookie-get', [CookieController::class, 'getCookies'])->name('cookie.get');
+
+//test localization
+Route::get('/test-localization', [TestLocalizationController::class, 'index'])->name('localization.test.index');
+Route::get('/test-localization/{locate}', [TestLocalizationController::class, 'setLocale'])->name('localization.test.setLocale');
+
 
