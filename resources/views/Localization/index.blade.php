@@ -17,5 +17,11 @@
         @if(isset($variable))
             {{ trans('message.welcome')}} {{ trans('message.status')}}
         @endif
+
+        @if(isset($choiceText))
+            {{$choiceText}}
+        @else {{ trans('message.text')}}
+        @endif
+
     </div>
 @stop
