@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Cookie;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-use App\Models\PostUser;
-use Cookie;
 use Illuminate\Support\Facades\DB;
 
 class LikeCounterController extends Controller
@@ -35,7 +33,6 @@ class LikeCounterController extends Controller
         //save cookie userId
         $cookie = cookie('userAuthId', $userAuth->id, 1);
 //        return response('Hello World')->cookie($cookie);
-
 
         $user = User::find($userAuth->id);
         $roleIds = [$id];

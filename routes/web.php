@@ -21,6 +21,7 @@ use App\Http\Controllers\Like\LikeController;
 use App\Http\Controllers\Like\PostController;
 use App\Http\Controllers\Cookie\CookieController;
 use App\Http\Controllers\Localization\TestLocalizationController;
+use App\Http\Controllers\Pattern\Generative\FactoryMethodController;
 
 Route::get('/', function () {
     return view('index');
@@ -85,4 +86,7 @@ Route::get('/cookie-get', [CookieController::class, 'getCookies'])->name('cookie
 Route::get('/test-localization', [TestLocalizationController::class, 'index'])->name('localization.test.index');
 Route::get('/test-localization/{locate}', [TestLocalizationController::class, 'setLocale'])->name('localization.test.setLocale');
 
-
+// Learn patterns
+Route::prefix('pattern/generative')->group(function () {
+    Route::get('/', [FactoryMethodController::class, 'index'])->name('pattern.generative.factory.index');
+});

@@ -17,7 +17,7 @@ class PostController extends Controller
 //        $user123 = Auth::user();
 //        dd($user123->name);
 
-        $posts = Post::all();
+            $posts = Post::all();
 
         return view('LikeCounter.showPost', compact('posts'));
     }

@@ -2,74 +2,91 @@
 @section('body')
 
     <div class="list-group">
-        <a href="{{route('autocompleteSearch.index')}}"
+        <a href="{{ route('autocompleteSearch.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">Autocomplete Search</a>
     </div>
     <div class="list-group">
-        <a href="{{route('sendmail.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Send
+        <a href="{{ route('sendmail.index') }}" class="list-group-item list-group-item-action list-group-item-primary">Send
             Email</a>
     </div>
     <div class="list-group">
-        <a href="{{route('javascripttest.index')}}"
+        <a href="{{ route('javascripttest.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">JavaScript</a>
     </div>
     <div class="list-group">
-        <a href="{{route('testdbrelationcontroller.index')}}"
+        <a href="{{ route('testdbrelationcontroller.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">TestDbRelation</a>
     </div>
     <div class="list-group">
-        <a href="{{route('test-queue.index')}}" class="list-group-item list-group-item-action list-group-item-primary">TestQueue</a>
+        <a href="{{ route('test-queue.index') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">TestQueue</a>
     </div>
     <div class="list-group">
-        <a href="{{route('test-redis.index')}}" class="list-group-item list-group-item-action list-group-item-primary">TestRedis</a>
+        <a href="{{ route('test-redis.index') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">TestRedis</a>
     </div>
     <div class="list-group">
-        <a href="{{route('math-executor.index')}}"
+        <a href="{{ route('math-executor.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">TestDownloadLibMathExecutorController</a>
     </div>
     <div class="list-group">
-        <a href="{{route('generate-short-link.index')}}"
+        <a href="{{ route('generate-short-link.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">GenerateShortLink</a>
     </div>
     <div class="list-group">
-        <a href="{{route('parsing.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Parsing
+        <a href="{{ route('parsing.index') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">Parsing
             data with site</a>
     </div>
     <div class="list-group">
-        <a href="{{route('get.data.from.api.index')}}"
+        <a href="{{ route('get.data.from.api.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">getDateFromApi</a>
     </div>
     <div class="list-group">
-        <a href="{{route('test.iterator.index')}}"
+        <a href="{{ route('test.iterator.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">TestIterator</a>
     </div>
     <div class="list-group">
-        <a href="{{route('test.cache.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Test
+        <a href="{{ route('test.cache.index') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">Test
             Cache</a>
     </div>
     <div class="list-group">
-        <a href="{{route('test-session.index')}}"
+        <a href="{{ route('test-session.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">Test Session</a>
     </div>
     <div class="list-group">
-        <a href="{{route('request-after-time.index')}}"
+        <a href="{{ route('request-after-time.index') }}"
            class="list-group-item list-group-item-action list-group-item-primary">Request after a certain time</a>
     </div>
     <div class="list-group">
-        <a href="{{route('other-test.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Other
+        <a href="{{ route('other-test.index') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">Other
             Test</a>
     </div>
     <div class="list-group">
-        <a href="{{route('like.show.post')}}" class="list-group-item list-group-item-action list-group-item-primary">Like
+        <a href="{{ route('like.show.post') }}" class="list-group-item list-group-item-action list-group-item-primary">Like
             counter</a>
     </div>
     <div class="list-group">
-        <a href="{{route('cookie.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Cookie
+        <a href="{{ route('cookie.index') }}" class="list-group-item list-group-item-action list-group-item-primary">Cookie
             Test</a>
     </div>
     <div class="list-group">
-        <a href="{{route('localization.test.index')}}" class="list-group-item list-group-item-action list-group-item-primary">Test
+        <a href="{{ route('localization.test.index') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">Test
             localization</a>
+    </div>
+
+    <hr>
+
+    <p>Patern</p>
+
+    <hr>
+    Порождающие
+    <div class="list-group">
+        <a href="{{ route('pattern.generative.factory.index') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">Factory patern</a>
     </div>
 
 
