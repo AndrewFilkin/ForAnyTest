@@ -11,7 +11,6 @@ Use App\Contracts\patern\Factory\Transport;
  * use class Action AutocompleteSearchAction
  * @see \App\Actions\paterns\Factory\Truck
  */
-
 class FactoryMethodController extends Controller
 {
     public function index(Transport $transport)
