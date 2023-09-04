@@ -24,7 +24,7 @@ services:
             - sail
         depends_on:
 #            - mysql
-#            - pgsql
+            - pgsql
             - redis
             - meilisearch
             - mailhog
@@ -49,18 +49,18 @@ services:
 #            test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
 #            retries: 3
 #            timeout: 5s
-#    pgsql:
-#        image: 'postgres:latest'
-#        ports:
-#            - '${FORWARD_DB_PORT:-5432}:5432'
-#        environment:
-#            POSTGRES_DB: ${DB_DATABASE}
-#            POSTGRES_USER: ${DB_USERNAME}
-#            POSTGRES_PASSWORD: ${DB_PASSWORD}
-#        volumes:
-#            - ./db_data:/var/lib/pgsql
-#        networks:
-#            - sail
+    pgsql:
+        image: 'postgres:latest'
+        ports:
+            - '${FORWARD_DB_PORT:-5432}:5432'
+        environment:
+            POSTGRES_DB: ${DB_DATABASE}
+            POSTGRES_USER: ${DB_USERNAME}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - ./db_data:/var/lib/pgsql
+        networks:
+            - sail
 #    phpmyadmin:
 #        image: phpmyadmin/phpmyadmin
 #        networks:

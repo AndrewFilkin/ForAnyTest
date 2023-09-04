@@ -20,9 +20,8 @@ class Kernel extends ConsoleKernel
 //sail artisan schedule:work
     protected function schedule(Schedule $schedule)
     {
-        $obj = new RequestAfterTimeController();
-        $schedule->call(function () use ($obj) {
-            $obj->index();
+        $schedule->call(function () {
+            Log::info("Every minute run ...");
         })->everyMinute();
     }
 
