@@ -22,6 +22,7 @@ use App\Http\Controllers\Like\PostController;
 use App\Http\Controllers\Cookie\CookieController;
 use App\Http\Controllers\Localization\TestLocalizationController;
 use App\Http\Controllers\Pattern\Generative\FactoryMethodController;
+use App\Http\Controllers\RabbitMQ\RabbitMqController;
 
 Route::get('/', function () {
     return view('index');
@@ -90,3 +91,6 @@ Route::get('/test-localization/{locate}', [TestLocalizationController::class, 's
 Route::prefix('pattern/generative')->group(function () {
     Route::get('/', [FactoryMethodController::class, 'index'])->name('pattern.generative.factory.index');
 });
+
+//RabbitMQ
+Route::get('/rabbitmq', [RabbitMqController::class, 'index'])->name('send.message.from.rabbitmq');
