@@ -31,30 +31,6 @@ class SendMessageToRabbitMQJob implements ShouldQueue
      */
     public function handle()
     {
-        // Подключаемся к серверу RabbitMQ
-        $connection = new AMQPStreamConnection(
-            config('queue.connections.rabbitmq.host'),
-            config('queue.connections.rabbitmq.port'),
-            config('queue.connections.rabbitmq.login'),
-            config('queue.connections.rabbitmq.password'),
-            config('queue.connections.rabbitmq.vhost')
-        );
 
-        // Создаем канал
-        $channel = $connection->channel();
-
-        // Определяем обменник
-        $channel->exchange_declare('exchanges-test', 'fanout', false, true, false);
-
-        // Определяем сообщение
-        $messageBody = 'Hello, RabbitMQ!';
-        $message = new AMQPMessage($messageBody);
-
-        // Публикуем сообщение в обменник
-        $channel->basic_publish($message, 'exchanges-test');
-
-        // Закрываем канал и соединение
-        $channel->close();
-        $connection->close();
     }
 }

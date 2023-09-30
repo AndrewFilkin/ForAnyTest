@@ -94,3 +94,4 @@ Route::prefix('pattern/generative')->group(function () {
 
 //RabbitMQ
 Route::get('/rabbitmq', [RabbitMqController::class, 'index'])->name('send.message.from.rabbitmq');
+Route::get('/rabbitmq-get', [RabbitMqController::class, 'getMessage'])->name('get.message.from.rabbitmq');
