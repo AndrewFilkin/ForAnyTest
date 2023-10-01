@@ -13,10 +13,11 @@ class RabbitMqService
         $connection = new AMQPStreamConnection('rabbitmq', 5672, 'sail', 'password');
         $channel = $connection->channel();
 
-        $channel->exchange_declare('laravel', 'fanout', false, true, false);
-        $channel->queue_declare('laravel', false, true, false, false);
-
-        $channel->queue_bind('laravel', 'laravel');
+//        use command sail artisan rabbitmq:setting
+//        Выполнить команду либо создать в самом rabbitmq
+//        $channel->exchange_declare('laravel', 'fanout', false, true, false);
+//        $channel->queue_declare('laravel', false, true, false, false);
+//        $channel->queue_bind('laravel', 'laravel');
 
         $msg = new AMQPMessage('Hello World!');
         $channel->basic_publish($msg, 'laravel');
@@ -36,8 +37,6 @@ class RabbitMqService
 
         // Определяем queue
         $channel->queue_declare('laravel', false, true, false, false);
-
-//        $channel->basic_consume('queue-test', '', false, false, false, false, $callback);
 
         $frame = $channel->basic_get('laravel');
 

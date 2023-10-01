@@ -16,22 +16,15 @@ class RabbitMqController extends Controller
 
     public function sendMessage()
     {
-//        SendMessageToRabbitMQJob::dispatch()->onConnection('rabbitmq');
-
-//        $obj = new SendMessageToRabbitMqService();
-//        $obj->sendMessage();
-//        return 'Send message...';
-
-//        $this->dispatch(new \App\Jobs\SendMessageToRabbitMQJob());
-//        return 'Send message...';
-
+//        setting - sail artisan rabbitmq:setting
         $obj = new RabbitMqService();
         $obj->sendMessage();
-
     }
 
     public function getMessage()
     {
+
+//      get data with command - sail artisan rabbitmq:get
         $obj = new RabbitMqService();
         $obj->getMessage();
 

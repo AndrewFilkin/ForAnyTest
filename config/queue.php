@@ -34,19 +34,6 @@ return [
             'driver' => 'sync',
         ],
 
-        'rabbitmq' => [
-            'driver' => 'rabbitmq',
-            'host' => env('RABBITMQ_HOST', 'rabbitmq'),
-            'port' => env('RABBITMQ_PORT', 5672),
-            'vhost' => env('RABBITMQ_VHOST', '/'),
-            'login' => env('RABBITMQ_LOGIN', 'sail'),
-            'password' => env('RABBITMQ_PASSWORD', 'password'),
-            'queue' => env('RABBITMQ_QUEUE', 'queue-test'),
-            'exchange_declare' => env('RABBITMQ_EXCHANGE_DECLARE', true),
-            'queue_declare' => env('RABBITMQ_QUEUE_DECLARE', true),
-            'queue_bind' => env('RABBITMQ_QUEUE_BIND', true),
-        ],
-
         'database' => [
             'driver' => 'database',
             'table' => 'jobs',
