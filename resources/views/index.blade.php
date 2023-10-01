@@ -78,6 +78,11 @@
             localization</a>
     </div>
 
+    <div class="list-group">
+        <a href="{{ url('rabbitmq') }}"
+           class="list-group-item list-group-item-action list-group-item-primary">RabbitMQ</a>
+    </div>
+
     <hr>
 
     <p>Patern</p>
