@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Actions\TestAction;
 use App\Contracts\TestContract;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\Other\OtherResource;
 
 class OtherTestController extends Controller
 {
@@ -15,13 +15,9 @@ class OtherTestController extends Controller
     {
 //        $obj = new TestAction();
 //        echo $action->testContractFunction();
-        $mas = [
-            'title' => 'title',
-            'message' => 'mess',
-            'name' => 'name'
-        ];
+        $data = [];
 
-        return new UserResource($mas);
+        return new OtherResource($data);
 
 
     }
